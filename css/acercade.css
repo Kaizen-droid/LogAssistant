@@ -1,0 +1,40 @@
+body{
+    background:url(https://images2.alphacoders.com/485/thumb-1920-485471.jpg) ;
+	background-size: cover;
+}
+.portfolio{
+    padding:6%;
+    text-align:center;
+    
+}
+.heading{
+    background: rgba(58, 58, 58, 0.877);
+    padding: 1%;
+    text-align: right;
+    box-shadow: 0px 0px 4px 0px #8f8f8f;
+}
+.heading img{
+    width: 10%;
+}
+.bio-info{
+    padding: 5%;
+    background:rgba(59, 59, 59, 0.774);
+    box-shadow: 0px 0px 4px 0px #817f7fa6;
+}
+.name{
+    font-family: 'Charmonman', cursive;
+    font-weight:600;
+}
+.bio-image{
+    text-align:center;
+}
+.bio-image img{
+    border-radius:50%;
+}
+.bio-content{
+    text-align:left;
+}
+.bio-content p{
+    font-weight:600;
+    font-size:30px;
+}
