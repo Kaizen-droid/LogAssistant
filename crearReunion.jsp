@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/indexnavbar.css">
-  <link rel="stylesheet" href="css/indexfooter.css">
-  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/registrofooter.css">
+  <link rel="stylesheet" href="css/indexregistro.css">
   <title>Menu</title>
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,22 +31,20 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
+      <%
+      String tipo = session.getAttribute("tipo").toString();
+      String id_usuario = session.getAttribute("id_usuario").toString();
+      if(tipo=="A"){ %>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="eventos.html">
           <i class="fa fa-clock-o">
           </i>
           Eventos
         </a>
       </li>
+      <% } %>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-sign-in">
-          </i>
-          Iniciar Sesion
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="acercade.html">
           <i class="fa fa-question">
           </i>
           Acerca de...
@@ -69,74 +68,43 @@
 
 
 <body>
-  
-  <section id="what-we-do">
-    <div class="container-fluid">
-      <section>
-      <h2 class="section-title mb-2 h1 text-white">Menu</h2>
-      <p class="text-center h5 text-white">Dejanos ayudarte en tu camino.</p></section>
-      <div class="row mt-5">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block fa-address-card-o">
-              <h3 class="card-title text-white">Crear Reuniones</h3>
-              <p class="card-text text-white">No te preocupes, te ayudaremos con todo el proceso, solo sientate y relajate.</p>
-              <a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
-            </div>
+  <div class="login-wrap">
+    <div class="login-html">
+      <input id="tab-2" type="radio" name="tab" class="for-pwd" checked><label for="tab-2" class="tab">Crear Reunion</label>
+      <div class="login-form">
+        <div class="for-pwd-htm">
+          <div class="group">
+            <label for="user" class="label">Titulo:</label>
+            <input id="nombre_reunion" type="text" class="input">
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block fa-comments-o">
-              <h3 class="card-title text-white">Administrar</h3>
-              <p class="card-text text-white">¿Necesitas cambiar algo? Dejanos ayudar un poco, con paciencia, para eso estamos.</p>
-              <a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
-            </div>
+          <div class="group">
+            <label for="pass" class="label">Fecha:</label>
+            <input id="fecha" type="text" class="input" >
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block fa-trash">
-              <h3 class="card-title text-white">Eliminar Reuniones</h3>
-              <p class="card-text text-white">¿Muchas cosas por hacer? Entonces dejalo anotado para despues, este es tu espacio.</p>
-              <a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
-            </div>
+          <div class="group">
+            <label for="pass" class="label">Ponente:</label>
+            <input id="ponente" type="text" class="input" >
           </div>
+          <div class="group">
+            <label for="pass" class="label">Edificio:</label>
+            <input id="edificio" type="text" class="input" >
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Hora:</label>
+            <input id="hora" type="text" class="input" >
+          </div>
+          <div class="group">
+            <input type="submit" class="button" value="Crear" id="crearReunion">
+          </div>
+          <div class="hr"></div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block block-4">
-              <h3 class="card-title text-white"></h3>
-              <p class="card-text text-white">
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block fa-trash">
-              <h3 class="card-title text-white">Denegar Acceso</h3>
-              <p class="card-text text-white">No te preocupes, nadie se va a enterar, despues de todo, tu eres el lider.</p>
-              <a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-block block-6">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>	
-  </section>
-
+    </div>
+  </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
-
-
 
 <footer id="footer">
   <section class=" bg-dark">
@@ -159,7 +127,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <p>Horario de Atención L - V de 9:00 - 17:00 | Linea de Atención 447-107-3392</p>
+          <p>Horario de Atenci&oacute;n L - V de 9:00 - 17:00 | Linea 447-107-3392</p>
           <p>atencionalcliente@LOGAsistant.com.mx</p>
           <p class="h6">© LOGAsistant | Todos los Derechos Reservados<a class="text-green ml-2"
               href="https://www.cdhidalgo.tecnm.mx/" target="_blank"><u>ITSCH</u></a></p>

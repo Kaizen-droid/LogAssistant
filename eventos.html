@@ -2,78 +2,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/indexnavbar.css">
-  <link rel="stylesheet" href="css/indexfooter.css">
-  <link rel="stylesheet" href="css/eventos.css">
-  <title>Menu</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/indexnavbar.css">
+	<link rel="stylesheet" href="css/indexfooter.css">
+	<link rel="stylesheet" href="css/eventos.css">
+	<title>Menu</title>
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 </head>
 
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><i class="fa fa-2x fa-address-card-o"></i></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class="fa fa-home"></i>
-          Principal
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-clock-o">
-          </i>
-          Eventos
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-sign-in">
-          </i>
-          Iniciar Sesion
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-question">
-          </i>
-          Acerca de...
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-hand-o-right">
-          </i>
-        </a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="¿Buscas algo?" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-  </div>
+	<a class="navbar-brand" href="#"><i class="fa fa-2x fa-address-card-o"></i></a>
+	<h3 class="text-white">LogAssistant</h3>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<i class="fa fa-home"></i>
+					Principal
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">
+					<i class="fa fa-clock-o">
+					</i>
+					Eventos
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="menu.jsp">
+					<i class="fa fa-bars">
+					</i>
+					Menu
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<i class="fa fa-question">
+					</i>
+					Acerca de...
+				</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ">
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<i class="fa fa-hand-o-right">
+					</i>
+				</a>
+			</li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="¿Buscas algo?" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+		</form>
+	</div>
 </nav>
 
 
 <body>
-  
-    <section id="our_menu" class="pt-5 pb-5">
+	<section id="our_menu" class="pt-5 pb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -83,256 +81,102 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<ul class="nav nav-tabs menu_tab mb-4" id="myTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" id="breakfast-tab" data-toggle="tab" href="#breakfast" role="tab">Sociales</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="lunch-tab" data-toggle="tab" href="#lunch" role="tab">Academica</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="dinner-tab" data-toggle="tab" href="#dinner" role="tab">Negocios</a>
-					</li>
-				</ul>
-        	</div>
-			<div class="row">
-				<div class="tab-content col-lg-12" id="myTabContent">
-					<div class="tab-pane fade show active" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="burger">
-									<div class="menu_content">
-										<h4>Reunion I</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Reunion II</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="fried rice">
-									<div class="menu_content">
-										<h4>Reunion III</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="meat">
-									<div class="menu_content">
-										<h4>Reunion IV</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card profile-card-1">
+								<img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb"
+									alt="profile-sample1" class="background" />
+								<img src="https://randomuser.me/api/portraits/women/20.jpg" alt="profile-image"
+									class="profile" />
+								<div class="card-content">
+									<h2>Savannah Fields<small>Engineer</small></h3>
+										<div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a
+												href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i
+													class="fa fa-google-plus"></i></a></div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="burger">
-									<div class="menu_content">
-										<h4>Reunion V</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Reunion VI</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Reunion VII</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/yM9klBQ.jpeg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Reunion VIII</h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-							</div>
+							<p class="mt-3 w-100 float-left text-center"><strong>Basic Profile Card</strong></p>
 						</div>
-					</div>
-					<div class="tab-pane fade" id="lunch" role="tabpanel" aria-labelledby="lunch-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/Aowufa1.jpg" alt="pizza">
-									<div class="menu_content">
-										<h4>12" Pizza  <span>$35</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+
+						<!--Profile Card 3-->
+						<div class="col-md-4">
+							<div class="card profile-card-3">
+								<div class="background-block">
+									<img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+										alt="profile-sample1" class="background" />
 								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/DJlmZDJ.jpg" alt="salad">
-									<div class="menu_content">
-										<h4>Salad <span>$20</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+								<div class="profile-thumb-block">
+									<img src="https://randomuser.me/api/portraits/men/41.jpg" alt="profile-image"
+										class="profile" />
 								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/knnQm7e.jpg" alt="green tea">
-									<div class="menu_content">
-										<h4>green tea <span>$15</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/YkDi8Nb.jpg" alt="meat">
-									<div class="menu_content">
-										<h4>meat  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+								<div class="card-content">
+									<h2>Justin Mccoy<small>Designer</small></h3>
+										<div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a
+												href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i
+													class="fa fa-google-plus"></i></a></div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/kbpceNv.jpg" alt="burger">
-									<div class="menu_content">
-										<h4>Chicken Burger  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/lYKUORL.jpg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Black coffee <span>$20</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/AXAHrf6.jpg" alt="fried rice">
-									<div class="menu_content">
-										<h4>Fried Rice  <span>$45</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/YkDi8Nb.jpg" alt="meat">
-									<div class="menu_content">
-										<h4>meat  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-							</div>
+							<p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p>
 						</div>
-					</div>
-					<div class="tab-pane fade" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/kbpceNv.jpg" alt="burger">
-									<div class="menu_content">
-										<h4>Chicken Burger  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+
+						<!--Profile Card 5-->
+						<div class="col-md-4 mt-4">
+							<div class="card profile-card-5">
+								<div class="card-img-block">
+									<img class="card-img-top"
+										src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
+										alt="Card image cap">
 								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/lYKUORL.jpg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Black coffee <span>$20</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/AXAHrf6.jpg" alt="fried rice">
-									<div class="menu_content">
-										<h4>Fried Rice  <span>$45</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/YkDi8Nb.jpg" alt="meat">
-									<div class="menu_content">
-										<h4>meat  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
+								<div class="card-body pt-0">
+									<h5 class="card-title">Florence Garza</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up
+										the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="single_menu">
-									<img src="https://i.imgur.com/kbpceNv.jpg" alt="burger">
-									<div class="menu_content">
-										<h4>Chicken Burger  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/lYKUORL.jpg" alt="black coffee">
-									<div class="menu_content">
-										<h4>Black coffee <span>$20</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/AXAHrf6.jpg" alt="fried rice">
-									<div class="menu_content">
-										<h4>Fried Rice  <span>$45</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-								<div class="single_menu">
-									<img src="https://i.imgur.com/YkDi8Nb.jpg" alt="meat">
-									<div class="menu_content">
-										<h4>meat  <span>$24</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
-									</div>
-								</div>
-							</div>
+							<p class="mt-3 w-100 float-left text-center"><strong>Card with Floting Picture</strong></p>
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</div>
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  <script src="js/bootstrap.min.js"></script>
+		<br>
+	</section>
+	
+	<script src="js/bootstrap.min.js"></script>
 </body>
 <footer id="footer">
-  <section class=" bg-dark">
-    <div class="container">
-      <div class="row">
-        <div>
-          <ul class="list-unstyled list-inline social text-center">
-            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                  class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                  class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                  class="fa fa-google-plus"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i
-                  class="fa fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <p>Horario de Atención L - V de 9:00 - 17:00 | Linea de Atención 447-107-3392</p>
-          <p>atencionalcliente@LOGAsistant.com.mx</p>
-          <p class="h6">© LOGAsistant | Todos los Derechos Reservados<a class="text-green ml-2"
-              href="https://www.cdhidalgo.tecnm.mx/" target="_blank"><u>ITSCH</u></a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+	<section class=" bg-dark">
+		<div class="container">
+			<div class="row">
+				<div>
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
+									class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
+									class="fa fa-twitter"></i></a>
+						</li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
+									class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
+									class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i
+									class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p>Horario de Atención L - V de 9:00 - 17:00 | Linea de Atención 447-107-3392</p>
+					<p>atencionalcliente@LOGAsistant.com.mx</p>
+					<p class="h6">© LOGAsistant | Todos los Derechos Reservados<a class="text-green ml-2"
+							href="https://www.cdhidalgo.tecnm.mx/" target="_blank"><u>ITSCH</u></a></p>
+				</div>
+			</div>
+		</div>
+	</section>
 </footer>
 
 </html>

@@ -31,21 +31,14 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="eventos.html">
           <i class="fa fa-clock-o">
           </i>
           Eventos
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-sign-in">
-          </i>
-          Iniciar Sesion
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="acercade.html">
           <i class="fa fa-question">
           </i>
           Acerca de...
@@ -69,7 +62,6 @@
 
 
 <body>
-  
   <section id="what-we-do">
     <div class="container-fluid">
       <section>
@@ -81,7 +73,7 @@
             <div class="card-block fa-address-card-o">
               <h3 class="card-title text-white">Crear Reuniones</h3>
               <p class="card-text text-white">No te preocupes, te ayudaremos con todo el proceso, solo sientate y relajate.</p>
-              <a href="#" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
+              <a href="crearReunion.jsp" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
             </div>
           </div>
         </div>
@@ -89,8 +81,8 @@
           <div class="card">
             <div class="card-block fa-comments-o">
               <h3 class="card-title text-white">Administrar</h3>
-              <p class="card-text text-white">¿Necesitas cambiar algo? Dejanos ayudar un poco, con paciencia, para eso estamos.</p>
-              <a href="#" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
+              <p class="card-text text-white">Necesitas cambiar algo, dejanos ayudar un poco, con paciencia, para eso estamos.</p>
+              <a href="adminReuniones.jsp" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
             </div>
           </div>
         </div>
@@ -98,7 +90,7 @@
           <div class="card">
             <div class="card-block fa-trash">
               <h3 class="card-title text-white">Eliminar Reuniones</h3>
-              <p class="card-text text-white">¿Muchas cosas por hacer? Entonces dejalo anotado para despues, este es tu espacio.</p>
+              <p class="card-text text-white">Muchas cosas por hacer, entonces dejalo anotado para despues, este es tu espacio.</p>
               <a href="#" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
             </div>
           </div>
@@ -132,11 +124,8 @@
       </div>
     </div>	
   </section>
-
-  <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
-
-
 
 <footer id="footer">
   <section class=" bg-dark">
@@ -159,7 +148,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <p>Horario de Atención L - V de 9:00 - 17:00 | Linea de Atención 447-107-3392</p>
+          <p>Horario de Atenci&oacute;n L - V de 9:00 - 17:00 | Linea 447-107-3392</p>
           <p>atencionalcliente@LOGAsistant.com.mx</p>
           <p class="h6">© LOGAsistant | Todos los Derechos Reservados<a class="text-green ml-2"
               href="https://www.cdhidalgo.tecnm.mx/" target="_blank"><u>ITSCH</u></a></p>

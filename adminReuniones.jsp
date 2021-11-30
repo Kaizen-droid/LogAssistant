@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/indexnavbar.css">
     <link rel="stylesheet" href="css/indexfooter.css">
-    <link rel="stylesheet" href="css/acercade.css">
+    <link rel="stylesheet" href="css/adminReuniones.css">
     <title>Acerca de</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -17,34 +17,28 @@
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#"><i class="fa fa-2x fa-address-card-o"></i></a>
     <h3 class="text-white">LogAssistant</h3>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-home"></i>
             Principal
             <span class="sr-only">(current)</span>
-            </a>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="eventos.html">
             <i class="fa fa-clock-o">
             </i>
             Eventos
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-sign-in">
-            </i>
-            Iniciar Sesion
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="acercade.html" >
+          <a class="nav-link" href="acercade.html">
             <i class="fa fa-question">
             </i>
             Acerca de...
@@ -64,40 +58,85 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
     </div>
-</nav>
+  </nav>
 
 <body>
-  
-  <div class="container portfolio text-white">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="heading">				
-          <img src="https://media.gcflearnfree.org/content/5b5b83bfec122d215870388f_07_27_2018/windw_l.png" />
-        </div>
-      </div>	
-    </div>
-    <div class="bio-info">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="bio-image">
-                <img src="https://www.cdhidalgo.tecnm.mx/images/tec.jpg" width="300" height="300" alt="image" />
-              </div>			
+
+    <%@ page import="javax.naming.*" %>
+    <%@ page import="java.sql.*" %>
+    <%
+    String id_usuario = session.getAttribute("id_usuario").toString();
+    String metodo, sql;
+    //Datos de conexion a la BD jspProyecto (127.0.0.1 es similar a locahost)
+    String bdconexion = "jdbc:mysql://127.0.0.1/proyecto?user='root'&password=";
+    String bduser = "root";
+    String bdpass = "";
+    //HttpSession session = request.getSession(true);
+    //Se obtiene el metodo de peticion
+    metodo = request.getMethod();
+    if(metodo.equalsIgnoreCase("GET")){
+    try{
+        sql = "SELECT * FROM reuniones WHERE id_usuario='"+id_usuario+"'";
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection conexion = DriverManager.getConnection(bdconexion, bduser, bdpass);
+        Statement st = conexion.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+
+        while(rs.next){
+            
+        }
+       
+        rs.close();
+        st.close();
+        conexion.close();
+    }catch(SQLException e){
+
+    }
+    }
+  %>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile">
+                    <div class="wrapper">
+                        <div class="header">ITSCH</div>
+                        <div class="banner-img">
+                            <img src="https://images3.alphacoders.com/797/thumb-1920-797090.jpg" alt="Image 1">
+                        </div>
+
+                        <div class="dates">
+                            <div class="start">
+                                <strong>Fecha</strong> 12:30 JAN 2015
+                            </div>
+                        </div>
+
+                        <div class="stats">
+
+                            <div>
+                                <strong>Titulo</strong> 3098
+                            </div>
+
+                            <div>
+                                <strong>Ponente</strong> 562
+                            </div>
+
+                            <div>
+                                <strong>Edificio</strong> 182
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <a href="#" class="Cbtn Cbtn-primary">Editar</a>
+                            <a href="#" class="Cbtn Cbtn-danger">Eliminar</a>
+                        </div>
+                    </div>
+                </div> 
             </div>
-          </div>	
         </div>
-        <div class="col-md-6">
-          <div class="bio-content">
-            <h2>TECNM Campus Cd. Hidalgo</h2>
-            <h5>“Ser institución de vanguardia; pilar fundamental del desarrollo sustentable y competitivo de los diferentes sectores de la sociedad en la región”.</h5>
-            <h4>¿Nuestro Objetivo?</h4>
-            <h3>La excelencia</h3>
-          </div>
-        </div>
-      </div>	
     </div>
-  </div>
 
     <script src="js/bootstrap.min.js"></script>
 </body>

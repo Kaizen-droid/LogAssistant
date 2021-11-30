@@ -7,6 +7,7 @@ String metodo, sql;
 String bdconexion = "jdbc:mysql://127.0.0.1/proyecto?user='root'&password=";
 String bduser = "root";
 String bdpass = "";
+//HttpSession session = request.getSession(true);
 //Se obtiene el metodo de peticion
 metodo = request.getMethod();
 if(metodo.equalsIgnoreCase("GET")){
@@ -20,6 +21,9 @@ if(metodo.equalsIgnoreCase("GET")){
         Statement st = conexion.createStatement();
         ResultSet rs = st.executeQuery(sql);
         if(rs.next()){
+            session.setAttribute("user", user);
+            session.setAttribute("tipo", rs.getString("tipo"));
+            session.setAttribute("id_usuario", rs.getString("id_usuario"));
             out.println("{\"result\": \"ok\"}");
         }else{
             out.println("{\"result\": \"no\"}");
