@@ -1,6 +1,5 @@
 <%@ page import="javax.naming.*" %>
 <%@ page import="java.sql.*" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/indexnavbar.css">
     <link rel="stylesheet" href="css/indexfooter.css">
-    <link rel="stylesheet" href="css/adminReuniones.css">
+    <link rel="stylesheet" href="css/indexregistro.css">
     <title>Acerca de</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -62,60 +61,61 @@
     </div>
   </nav>
 
-<body>
-<div class="container-fluid">
-        <div class="row">
+  <body>
     <%
     String metodo, sql;
-    String id_usuario = session.getAttribute("id_usuario").toString();
     //Datos de conexion a la BD jspProyecto (127.0.0.1 es similar a locahost)
     String bdconexion = "jdbc:mysql://127.0.0.1/proyecto?user='root'&password=";
+    String id_reunion;
     String bduser = "root";
     String bdpass = "";
-    
     //HttpSession session = request.getSession(true);
     //Se obtiene el metodo de peticion
     metodo = request.getMethod();
     if(metodo.equalsIgnoreCase("GET")){
-    try{
-        sql = "SELECT * FROM reuniones WHERE id_usuario='"+id_usuario+"'";
-
+    try{      
+        String id_reunion = session.getAttribute("id_reunion").toString();
+        out.print("<h1>"+ id_reunion +"</h1>");
+        sql = "SELECT * FROM reuniones WHERE id_reunion='"+id_reunion+"'";
         Class.forName("com.mysql.jdbc.Driver");
         Connection conexion = DriverManager.getConnection(bdconexion, bduser, bdpass);
         Statement st = conexion.createStatement();
         ResultSet rs = st.executeQuery(sql);
         while(rs.next()){
-          
-            out.print("<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>");
-              out.print("<div class='tile'>");
-                    out.print("<div class='wrapper'>");
-                            out.print("<div class='header'>ITSCH</div>");
-                            out.print("<div class='banner-img'>");
-                              out.print("<img src='https://images3.alphacoders.com/797/thumb-1920-797090.jpg' alt='Image 1'>");
-                            out.print("</div>");
-                            out.print("<div class='dates'>");
-                                out.print("<div class='start'>");
-                                  out.print("<strong>Fecha</strong>"+rs.getString("fecha")+ "<br>" + rs.getString("hora"));
-                                out.print("</div>");
-                            out.print("</div>");
-                            out.print("<div class='stats'>");
-                              out.print("<div>");
-                                out.print("<strong>Titulo</strong>"+rs.getString("nombre_reunion"));
-                              out.print("</div>");
-                            out.print("<div>");
-                                out.print("<strong>Ponente</strong>"+rs.getString("ponente"));
-                            out.print("</div>");
-                            out.print("<div>");
-                                out.print("<strong>Edificio</strong>"+rs.getString("edificio"));
-                            out.print("</div>");
-                            out.print("</div>");
-                                  out.print("<div class='footer'>");
-                                    out.print("<a  onClick='actReunion("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Editar</a>");
-                                    out.print("<a href='#' class='Cbtn Cbtn-danger'>Eliminar</a>");
-                            out.print("</div>");
-                    out.print("</div>");
-              out.print("</div>");
-            out.print("</div>");   
+            out.print("<div class='login-wrap'>");
+            out.print("<div class='login-html'>");
+            out.print("<input id='tab-2' type='radio' name='tab' class='for-pwd' checked><label for='tab-2' class='tab'>Actualizar Reunion</label>");
+            out.print("<div class='login-form'>");
+            out.print("<div class='for-pwd-htm'>");
+            out.print("<div class='group'>");
+            out.print("<label for='user' class='label'>Titulo:</label>");
+            out.print("<input id='nombre_reunion' type='text' class='input' placeholder=" +rs.getString("nombre_reunion") + ">");
+            out.print("<div class='group'>");
+            out.print("<label for='pass' class='label'>Fecha:</label>");
+            out.print("<input id='fecha' type='text' class='input' placeholder=" +rs.getString("fecha") + ">");
+            out.print("</div>");
+            out.print("<div class='group'>");
+            out.print("<label for='pass' class='label'>Ponente:</label>");
+            out.print("<input id='ponente' type='text' class='input' placeholder=" +rs.getString("ponente") + ">");
+            out.print("</div>");
+            out.print("<div class='group'>");
+            out.print("<label for='pass' class='label'>Edificio:</label>");
+            out.print("<input id='edificio' type='text' class='input' placeholder=" +rs.getString("edificio") + ">");
+            out.print("</div>");
+            out.print("<div class='group'>");
+            out.print("<label for='pass' class='label'>Hora:</label>");
+            out.print("<input id='hora' type='text' class='input' placeholder=" +rs.getString("hora") + ">");
+            out.print("</div>");
+            out.print("<div class='group'>");
+            out.print("<br>");
+            out.print("<input type='submit' class='button' value='Crear' id='actReunion'>");
+            out.print("</div>");
+            out.print("<div class='hr'></div>");
+            out.print("</div>");
+            out.print("</div>");
+            out.print("</div>");
+            out.print("</div>");
+            out.print("</div>");
         }
         rs.close();
         st.close();
@@ -124,30 +124,18 @@
 
     }
     }
-  %>
-        </div>
-    </div>
+  %> 
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
+  <br>  
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-    <script>
-      function actReunion(id) {
-        var id_reunion = id;
-        console.log(id_reunion)
-      }
-    </script>
-</body>
 
-<footer id="footer">
+  </body>
+
+  <footer id="footer">
     <section class=" bg-dark">
       <div class="container">
         <div class="row">
