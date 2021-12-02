@@ -53,4 +53,23 @@ $(document).ready(function(){
             alert("Datos Incorrectos, verifique sus datos por favor.")
         }
     });
+    $("#actReunion").click(function(){
+        var id_reunion = $("#id_reunion").val();
+        var nombre_reunion = $("#nombre_reunion").val();
+        var fecha = $("#fecha").val();
+        var ponente = $("#ponente").val();
+        var edificio = $("#edificio").val();
+        var hora = $("#hora").val();
+        console.log("Aqui llego actualizar Reunion")
+        if(nombre_reunion.length!=0 && fecha.length!=0 && ponente.length!=0 && edificio!=0 
+            && hora!=0 ){
+                $.post("actualizarReuniones.jsp", {id_reunion:id_reunion ,nombre_reunion:nombre_reunion, fecha:fecha, ponente:ponente, edificio:edificio, hora:hora}, function(data){            
+                console.log("Pues como que si jala la actualizacion")
+                alert("Reunion Actualizada!!!");
+                window.location.href = "actReunion.jsp";
+                });
+        }else{
+            alert("Datos Incorrectos, verifique sus datos por favor.")
+        }
+    });
 });

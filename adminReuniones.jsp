@@ -143,6 +143,7 @@
       function actReunion(id) {
         var id_reunion = id;
         console.log(id_reunion)
+        window.location.href = "actReunion.jsp?id_reunion="+id_reunion;
       }
     </script>
 </body>

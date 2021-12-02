@@ -74,8 +74,7 @@
     metodo = request.getMethod();
     if(metodo.equalsIgnoreCase("GET")){
     try{      
-        String id_reunion = session.getAttribute("id_reunion").toString();
-        out.print("<h1>"+ id_reunion +"</h1>");
+        id_reunion = request.getParameter("id_reunion");
         sql = "SELECT * FROM reuniones WHERE id_reunion='"+id_reunion+"'";
         Class.forName("com.mysql.jdbc.Driver");
         Connection conexion = DriverManager.getConnection(bdconexion, bduser, bdpass);
@@ -90,6 +89,7 @@
             out.print("<div class='group'>");
             out.print("<label for='user' class='label'>Titulo:</label>");
             out.print("<input id='nombre_reunion' type='text' class='input' placeholder=" +rs.getString("nombre_reunion") + ">");
+            out.print("<input id='id_reunion' type='hidden' type='text' class='input' placeholder=" + id_reunion + ">");
             out.print("<div class='group'>");
             out.print("<label for='pass' class='label'>Fecha:</label>");
             out.print("<input id='fecha' type='text' class='input' placeholder=" +rs.getString("fecha") + ">");
@@ -108,7 +108,7 @@
             out.print("</div>");
             out.print("<div class='group'>");
             out.print("<br>");
-            out.print("<input type='submit' class='button' value='Crear' id='actReunion'>");
+            out.print("<input type='submit' class='button' value='Actualizar' id='actReunion'>");
             out.print("</div>");
             out.print("<div class='hr'></div>");
             out.print("</div>");
