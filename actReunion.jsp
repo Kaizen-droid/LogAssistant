@@ -108,7 +108,7 @@
             out.print("</div>");
             out.print("<div class='group'>");
             out.print("<br>");
-            out.print("<input type='submit' class='button' value='Actualizar' id='actReunion'>");
+            out.print("<input type='submit' class='button' value='Actualizar' onClick='actuReunion("+ id_reunion +")'>");
             out.print("</div>");
             out.print("<div class='hr'></div>");
             out.print("</div>");
@@ -132,7 +132,29 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
-
+    <script> 
+    function actuReunion(id) {
+      var nombre_reunion = $("#nombre_reunion").val();
+        var fecha = $("#fecha").val();
+        var ponente = $("#ponente").val();
+        var edificio = $("#edificio").val();
+        var hora = $("#hora").val();
+        var id_reunion = id;
+        console.log(id_reunion)
+        console.log(hora)
+        if(nombre_reunion.length!=0 && fecha.length!=0 && ponente.length!=0 && edificio!=0 
+            && hora!=0 ){
+                $.post("actualizarReuniones.jsp", {id_reunion:id_reunion ,nombre_reunion:nombre_reunion, fecha:fecha, ponente:ponente, edificio:edificio, hora:hora}, function(data){            
+                console.log("Pues como que si jala la actualizacion")
+                alert("Reunion Actualizada!!!");
+                window.location.href = "adminReuniones.jsp";
+                });
+        }else{
+            alert("Datos Incorrectos, verifique sus datos por favor.")
+        }
+        //window.location.href = "actReunion.jsp?id_reunion="+id_reunion;
+      }
+    </script>
   </body>
 
   <footer id="footer">

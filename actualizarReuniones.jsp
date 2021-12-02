@@ -2,7 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%
 String nombre_reunion, fecha, ponente, edificio, hora;
-int id_reunion ;
+String id_reu ;
 String metodo, sql;
 //Datos de conexion a la BD jspProyecto (127.0.0.1 es similar a locahost)
 String bdconexion = "jdbc:mysql://127.0.0.1/proyecto?user='root'&password=";
@@ -12,13 +12,14 @@ String bdpass = "";
 metodo = request.getMethod();
 if(metodo.equalsIgnoreCase("POST")){
     try{
-        id_reunion = request.getParameter("id_reunion");
+        id_reu = request.getParameter("id_reunion");
+        int id_reunion = Integer.parseInt(id_reu);
         nombre_reunion = request.getParameter("nombre_reunion");
         fecha = request.getParameter("fecha");
         ponente = request.getParameter("ponente");
         edificio = request.getParameter("edificio");
         hora = request.getParameter("hora");
-        sql = "UPDATE reuniones nombre_reunion='"+ nombre_reunion + "', fecha= '" + fecha + "', ponente= '" + ponente + "', edificio= '" + edificio + "', hora= '" + hora + "', '" + hora + "' WHERE id_reunion= '" + id_reunion + "')";
+        sql = "UPDATE reuniones SET nombre_reunion='"+ nombre_reunion + "', fecha='" + fecha + "', ponente='" + ponente + "', edificio='" + edificio + "', hora='" + hora + "' WHERE id_reunion=" + id_reunion + "";
         
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection(bdconexion,bduser,bdpass);

@@ -47,7 +47,6 @@ $(document).ready(function(){
                 $.post("crearReuniones.jsp", {id_reunion:id_reunion, nombre_reunion:nombre_reunion, fecha:fecha, ponente:ponente, edificio:edificio, hora:hora}, function(data){            
                 console.log("Pues como que si jala")
                 alert("Reunion Creada!!!");
-                
                 });
         }else{
             alert("Datos Incorrectos, verifique sus datos por favor.")
@@ -61,12 +60,13 @@ $(document).ready(function(){
         var edificio = $("#edificio").val();
         var hora = $("#hora").val();
         console.log("Aqui llego actualizar Reunion")
+        console.log(id_reunion)
         if(nombre_reunion.length!=0 && fecha.length!=0 && ponente.length!=0 && edificio!=0 
             && hora!=0 ){
                 $.post("actualizarReuniones.jsp", {id_reunion:id_reunion ,nombre_reunion:nombre_reunion, fecha:fecha, ponente:ponente, edificio:edificio, hora:hora}, function(data){            
                 console.log("Pues como que si jala la actualizacion")
                 alert("Reunion Actualizada!!!");
-                window.location.href = "actReunion.jsp";
+                window.location.href = "adminReuniones.jsp";
                 });
         }else{
             alert("Datos Incorrectos, verifique sus datos por favor.")
