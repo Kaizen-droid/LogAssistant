@@ -25,9 +25,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class="fa fa-home"></i>
-          Principal
+        <a class="nav-link" href="menu.jsp">
+          <i class="fa fa-bars"></i>
+          Menu
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -43,26 +43,7 @@
         </a>
       </li>
       <% } %>
-      <li class="nav-item">
-        <a class="nav-link" href="acercade.html">
-          <i class="fa fa-question">
-          </i>
-          Acerca de...
-        </a>
-      </li>
     </ul>
-    <ul class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-hand-o-right">
-          </i>
-        </a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="¿Buscas algo?" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
   </div>
 </nav>
 

@@ -26,9 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-        <a class="nav-link" href="menu.jsp">
-          <i class="fa fa-bars"></i>
-          Menu
+        <a class="nav-link" href="index.html">
+          <i class="fa fa-sign-out"></i>
+          Cerrar Sesion
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="eventos.jsp">
+          <i class="fa fa-users"></i>
+          Eventos
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -53,7 +60,7 @@
     metodo = request.getMethod();
     if(metodo.equalsIgnoreCase("GET")){
     try{
-        sql = "SELECT * FROM reuniones WHERE id_usuario='"+id_usuario+"'";
+        sql = "SELECT DISTINCT reuniones.id_reunion, reuniones.nombre_reunion, reuniones.fecha, reuniones.ponente, reuniones.edificio, reuniones.hora, reuniones_metido.id_reunion FROM reuniones, reuniones_metido WHERE reuniones_metido.id_usuario='"+ id_usuario +"' AND reuniones.id_reunion=reuniones_metido.id_reunion";
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection conexion = DriverManager.getConnection(bdconexion, bduser, bdpass);
@@ -70,23 +77,24 @@
                             out.print("</div>");
                             out.print("<div class='dates'>");
                                 out.print("<div class='start'>");
-                                  out.print("<strong>Fecha</strong>"+rs.getString("fecha")+ "<br>" + rs.getString("hora"));
+                                  out.print("<strong>Fecha</strong>"+rs.getString("reuniones.fecha")+ "<br>" + rs.getString("reuniones.hora"));
                                 out.print("</div>");
                             out.print("</div>");
                             out.print("<div class='stats'>");
                               out.print("<div>");
-                                out.print("<strong>Titulo</strong>"+rs.getString("nombre_reunion"));
+                                out.print("<strong>Titulo</strong>"+rs.getString("reuniones.nombre_reunion"));
                               out.print("</div>");
                             out.print("<div>");
-                                out.print("<strong>Ponente</strong>"+rs.getString("ponente"));
+                                out.print("<strong>Ponente</strong>"+rs.getString("reuniones.ponente"));
                             out.print("</div>");
                             out.print("<div>");
-                                out.print("<strong>Edificio</strong>"+rs.getString("edificio"));
+                                out.print("<strong>Edificio</strong>"+rs.getString("reuniones.edificio"));
                             out.print("</div>");
                             out.print("</div>");
                                   out.print("<div class='footer'>");
-                                    out.print("<a  onClick='actReunion("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Editar</a>");
-                                    out.print("<a  onClick='delReunion("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-danger'>Eliminar</a>");
+                                    out.print("<a  onClick='cancelarSus("+rs.getString("reuniones_metido.id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Cancel</a>");
+                                    out.print("<a  onClick='imprimirCS("+rs.getString("reuniones.id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>CTN</a>");
+                                    out.print("<a  onClick='imprimirQR("+rs.getString("reuniones.id_reunion")+")' href='#' class='Cbtn Cbtn-danger'>QR</a>");
                             out.print("</div>");
                     out.print("</div>");
               out.print("</div>");
@@ -110,7 +118,6 @@
   <br>
   <br>
   <br>
-
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
@@ -121,12 +128,12 @@
         window.location.href = "actReunion.jsp?id_reunion="+id_reunion;
       }
 
-      function delReunion(id){
+      function cancelarSus(id){
         var id_reunion = id;
-        $.post("EliminarReuniones.jsp", {id_reunion:id_reunion}, function(data){            
+        $.post("CancelarSus.jsp", {id_reunion:id_reunion}, function(data){            
                 console.log("Pues como que si jala la Eliminacion")
                 alert("Reunion Eliminada!!!");
-                window.location.href = "adminReuniones.jsp";
+                window.location.href = "misReuniones.jsp";
                 });
       }
     </script>

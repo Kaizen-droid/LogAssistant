@@ -24,12 +24,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class="fa fa-home"></i>
-          Principal
+        <a class="nav-link" href="menu.jsp">
+          <i class="fa fa-bars"></i>
+          Menu
           <span class="sr-only">(current)</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fa fa-sign-out"></i>
+          Cerrar Sesion
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <%
+      String tipo = session.getAttribute("tipo").toString();
+      String id_usuario = session.getAttribute("id_usuario").toString();
+      if(tipo=="A"){ %>
       <li class="nav-item">
         <a class="nav-link" href="eventos.html">
           <i class="fa fa-clock-o">
@@ -37,26 +48,8 @@
           Eventos
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="acercade.html">
-          <i class="fa fa-question">
-          </i>
-          Acerca de...
-        </a>
-      </li>
+      <% } %>
     </ul>
-    <ul class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-hand-o-right">
-          </i>
-        </a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="¿Buscas algo?" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
   </div>
 </nav>
 
@@ -91,7 +84,7 @@
             <div class="card-block fa-trash">
               <h3 class="card-title text-white">Eliminar Reuniones</h3>
               <p class="card-text text-white">Muchas cosas por hacer, entonces dejalo anotado para despues, este es tu espacio.</p>
-              <a href="#" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
+              <a href="adminReuniones.jsp" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
             </div>
           </div>
         </div>
@@ -107,10 +100,10 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
-            <div class="card-block fa-trash">
-              <h3 class="card-title text-white">Denegar Acceso</h3>
+            <div class="card-block fa-user">
+              <h3 class="card-title text-white">Editar Perfil</h3>
               <p class="card-text text-white">No te preocupes, nadie se va a enterar, despues de todo, tu eres el lider.</p>
-              <a href="#" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
+              <a href="Perfil.jsp" title="Read more" class="read-more" >Vamos<i class="fa fa-angle-double-right ml-2"></i></a>
             </div>
           </div>
         </div>

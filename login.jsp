@@ -24,9 +24,14 @@ if(metodo.equalsIgnoreCase("GET")){
             session.setAttribute("user", user);
             session.setAttribute("tipo", rs.getString("tipo"));
             session.setAttribute("id_usuario", rs.getString("id_usuario"));
-            out.println("{\"result\": \"ok\"}");
+            if(rs.getString("tipo").toString()=="A"){
+                out.println("{\"result\": \""+rs.getString("tipo").toString()+"\"}");
+            }else{
+                out.println("{\"result\": \""+rs.getString("tipo").toString()+"\"}");
+            }
+            
         }else{
-            out.println("{\"result\": \"no\"}");
+            
         }
         rs.close();
         st.close();

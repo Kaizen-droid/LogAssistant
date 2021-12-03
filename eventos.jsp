@@ -26,9 +26,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-        <a class="nav-link" href="menu.jsp">
-          <i class="fa fa-bars"></i>
-          Menu
+        <a class="nav-link" href="index.html">
+          <i class="fa fa-sign-out"></i>
+          Cerrar Sesion
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="Perfil.jsp">
+          <i class="fa fa-user"></i>
+          Perfil
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="misReuniones.jsp">
+          <i class="fa fa-users"></i>
+          Mis Reuniones
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -53,7 +67,7 @@
     metodo = request.getMethod();
     if(metodo.equalsIgnoreCase("GET")){
     try{
-        sql = "SELECT * FROM reuniones WHERE id_usuario='"+id_usuario+"'";
+        sql = "SELECT * FROM reuniones";
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection conexion = DriverManager.getConnection(bdconexion, bduser, bdpass);
@@ -85,8 +99,7 @@
                             out.print("</div>");
                             out.print("</div>");
                                   out.print("<div class='footer'>");
-                                    out.print("<a  onClick='actReunion("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Editar</a>");
-                                    out.print("<a  onClick='delReunion("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-danger'>Eliminar</a>");
+                                    out.print("<a  onClick='inscribir("+rs.getString("id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Inscribirse</a>");
                             out.print("</div>");
                     out.print("</div>");
               out.print("</div>");
@@ -115,19 +128,16 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
     <script>
-      function actReunion(id) {
+      function inscribir(id){
+		  <% String id_us = session.getAttribute("id_usuario").toString(); %>
+		var id_usuario = "<%=id_us %>";
         var id_reunion = id;
-        console.log(id_reunion)
-        window.location.href = "actReunion.jsp?id_reunion="+id_reunion;
-      }
-
-      function delReunion(id){
-        var id_reunion = id;
-        $.post("EliminarReuniones.jsp", {id_reunion:id_reunion}, function(data){            
-                console.log("Pues como que si jala la Eliminacion")
-                alert("Reunion Eliminada!!!");
-                window.location.href = "adminReuniones.jsp";
-                });
+		console.log(id_usuario)
+		console.log(id_reunion)
+        $.post("inscribirReunion.jsp", {id_reunion:id_reunion, id_usuario}, function(data){            
+                console.log("Pues como que si jala la inscripcion")
+                alert("Inscrito!!!");
+        });
       }
     </script>
 </body>
