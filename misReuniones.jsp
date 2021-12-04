@@ -92,9 +92,9 @@
                             out.print("</div>");
                             out.print("</div>");
                                   out.print("<div class='footer'>");
-                                    out.print("<a  onClick='cancelarSus("+rs.getString("reuniones_metido.id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>Cancel</a>");
-                                    out.print("<a  onClick='imprimirCS("+rs.getString("reuniones.id_reunion")+")' href='#' class='Cbtn Cbtn-primary'>CTN</a>");
-                                    out.print("<a  onClick='imprimirQR("+rs.getString("reuniones.id_reunion")+")' href='#' class='Cbtn Cbtn-danger'>QR</a>");
+                                    out.print("<a  onClick='cancelarSus("+rs.getString("reuniones_metido.id_reunion")+")' href='#' class='Cbtn Cbtn-danger'>Cancel</a>");
+                                    out.print("<a href='img/certificado.jpg' download='certificado.jpg' class='Cbtn Cbtn-primary'>CERT</a>");
+                                    out.print("<a href='img/QR.png' download='QR.png' class='Cbtn Cbtn-primary'>QR</a>");
                             out.print("</div>");
                     out.print("</div>");
               out.print("</div>");

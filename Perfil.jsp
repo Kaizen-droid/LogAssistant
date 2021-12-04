@@ -27,7 +27,7 @@
       <%
       String tipo = session.getAttribute("tipo").toString();
       String id_usuario = session.getAttribute("id_usuario").toString();
-      if(tipo=="A"){ %>
+      if(tipo.equalsIgnoreCase("A")){ %>
       <li class="nav-item">
         <a class="nav-link" href="menu.jsp">
           <i class="fa fa-bars"></i>
